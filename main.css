@@ -1,11 +1,18 @@
-body {
+
+		body {
 			margin: 10% 0 5% 15%;
 			max-width: 737px;
-
 		}
 
 		table:hover {
 			box-shadow: 8px 8px 0 black;
+		}
+
+		li {
+			list-style-type: square;
+  			list-style-position: inside;
+  			display: inline;
+  			font-style: italic;
 		}
 
 		h1 {
@@ -44,9 +51,8 @@ body {
 			border-bottom: 4px dashed black;
 		}
 
-		#nav {
+		#nav, #content {
 			margin: 10% 0 0 15%;
-			
 		}
 
 		.hidecontent {
