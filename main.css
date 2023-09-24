@@ -7,23 +7,23 @@
 .carpet {
   background-image: url("https://cssinate.com/assets/8bit/carpet.gif");
   image-rendering: pixelated;
-  background-size: 4vmin 6vmin; /* 50% smaller */
+  background-size: 5vmin 7.5vmin; /* 25% larger */
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100vw;
-  height: 6vmin; /* 50% smaller */
+  width: 125vw; /* 25% larger */
+  height: 7.5vmin; /* 25% larger */
 }
 
 .window {
-  background-image: url("https://cssinate.com/assets/8bit/window.gif");
+  background-image: url("img/clouds.gif");
   image-rendering: pixelated;
   background-size: cover;
   position: fixed;
-  bottom: 15vmin; /* Adjusted for smaller size */
-  left: 7.5vmin; /* Adjusted for smaller size */
-  width: 19.5vmin; /* 50% smaller */
-  height: 12vmin; /* 50% smaller */
+  bottom: 18.75vmin; /* 25% larger */
+  left: 9.375vmin; /* 25% larger */
+  width: 24.375vmin; /* 25% larger */
+  height: 15vmin; /* 25% larger */
 }
 
 .cube {
@@ -31,22 +31,34 @@
   image-rendering: pixelated;
   background-size: cover;
   position: fixed;
-  bottom: 5.5vmin; /* Adjusted for smaller size */
-  right: 5vmin; /* Adjusted for smaller size */
-  width: 25vmin; /* 50% smaller */
-  height: 15vmin; /* 50% smaller */
+  bottom: 6.875vmin; /* 25% larger */
+  right: 6.25vmin; /* 25% larger */
+  width: 31.25vmin; /* 25% larger */
+  height: 18.75vmin; /* 25% larger */
 }
 
 .watercooler {
-  background-image: url("https://cssinate.com/assets/8bit/watercooler.png");
+  background-image: url("img/cooler.gif");
   image-rendering: pixelated;
   background-size: cover;
   position: fixed;
-  bottom: 5.5vmin; /* Adjusted for smaller size */
-  right: 34vmin; /* Adjusted for smaller size */
-  width: 4vmin; /* 50% smaller */
-  height: 12vmin; /* 50% smaller */
+  bottom: 6.875vmin; /* 25% larger */
+  right: 42.5vmin; /* 25% larger */
+  width: 5vmin; /* 25% larger */
+  height: 15vmin; /* 25% larger */
 }
+
+.plant {
+  background-image: url("img/plant.gif");
+  image-rendering: pixelated;
+  background-size: cover;
+  position: fixed;
+  bottom: 6.875vmin; /* 25% larger */
+  right: 50vmin; /* Adjusted position to the left of watercooler */
+  width: 2.5vmin; /* 50% smaller */
+  height: 7.5vmin; /* 50% smaller */
+}
+
 
 		table:hover {
 			box-shadow: 8px 8px 0 black;
