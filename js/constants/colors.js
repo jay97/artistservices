@@ -1,0 +1,25 @@
+export const COLORS = {
+  white: "#ffffff",
+  black: "#000000",
+  blue: "#73bed3",
+  darkBlue: "#4f8fba",
+  lightBlue: "#a4dddb",
+  slateBlue: "#5c7c94",
+  darkSlateBlue: "#2e4c5e",
+  gray: "#c7cfcc",
+  lightGray: "#ebede9",
+  darkGray: "#10141f",
+  brown: "#371e1b",
+  purple: "#495588",
+  lightPurple: "#6272b6",
+  darkPurple: "#3b2c4a",
+  yellow: "#e8c170",
+  darkYellow: "#be772b",
+  red: "#a53030",
+  green: "#26ff36",
+
+  // Night
+  nightLightBlue: "#546bab",
+  nightBlue: "#2e4482",
+  nightDarkBlue: "#131862",
+};
