@@ -342,12 +342,12 @@ export default class Interface {
       this.artistInfo.text.height * 1 +
       (isMobileSizedScreen() ? 40 : 80) * scale;
 
-    Object.keys(links).forEach((icon, i) => {
-      if (!this.socialMediaLinks[icon]) {
-        return;
-      }
+    const icons = Object.keys(links)
+      .map((icon) => this.socialMediaLinks[icon])
+      .filter(Boolean);
 
-      this.socialMediaLinks[icon].position.x =
+    icons.forEach((icon, i) => {
+      icon.position.x =
         numberOfLinks === 1
           ? this.artistInfo.text.position.x +
             this.artistInfo.background.width -
@@ -356,19 +356,19 @@ export default class Interface {
             linkWidth * i -
             (this.artistInfo.margin() / 3) * (i + 1);
 
-      this.socialMediaLinks[icon].position.y = isMobileSizedScreen()
+      icon.position.y = isMobileSizedScreen()
         ? positionY + 50 * scale
         : positionY - 100 * scale;
 
-      this.socialMediaLinks[icon].scale.x = scale / 1.2;
-      this.socialMediaLinks[icon].scale.y = scale / 1.2;
-      this.socialMediaLinks[icon].anchor.set(0.5);
+      icon.scale.x = scale / 1.2;
+      icon.scale.y = scale / 1.2;
+      icon.anchor.set(0.5);
 
-      this.socialMediaLinks[icon].filters = [
+      icon.filters = [
         State.filters.highlight(isLargeSizedScreen() ? 6 : 4, COLORS.black),
       ];
 
-      this.artistInfo.container.addChild(this.socialMediaLinks[icon]);
+      this.artistInfo.container.addChild(icon);
     });
   }
 
