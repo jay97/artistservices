@@ -334,17 +334,17 @@ export default class Interface {
 
     const linkWidth = INTERFACE_SPRITES.spotify.width * scale;
 
-    const numberOfLinks = Object.keys(links).length;
+    const icons = Object.keys(links)
+      .map((icon) => this.socialMediaLinks[icon])
+      .filter(Boolean);
+
+    const numberOfLinks = icons.length;
     const positionX = State.app.screen.width / 2 + numberOfLinks * 310 * scale;
 
     const positionY =
       this.artistInfo.text.position.y +
       this.artistInfo.text.height * 1 +
       (isMobileSizedScreen() ? 40 : 80) * scale;
-
-    const icons = Object.keys(links)
-      .map((icon) => this.socialMediaLinks[icon])
-      .filter(Boolean);
 
     icons.forEach((icon, i) => {
       icon.position.x =
@@ -355,6 +355,10 @@ export default class Interface {
           : positionX -
             linkWidth * i -
             (this.artistInfo.margin() / 3) * (i + 1);
+
+      if (numberOfLinks > 3) {
+        icon.position.x = icon.position.x - 300 * scale;
+      }
 
       icon.position.y = isMobileSizedScreen()
         ? positionY + 50 * scale
