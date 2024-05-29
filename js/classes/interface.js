@@ -343,6 +343,10 @@ export default class Interface {
       (isMobileSizedScreen() ? 40 : 80) * scale;
 
     Object.keys(links).forEach((icon, i) => {
+      if (!this.socialMediaLinks[icon]) {
+        return;
+      }
+
       this.socialMediaLinks[icon].position.x =
         numberOfLinks === 1
           ? this.artistInfo.text.position.x +
