@@ -21,7 +21,7 @@ export const GREETINGS = {
     "Get out of my room!",
     "Hi",
   ],
-  wud: ["￼"],
+  wud: ["[Intentional Website Design]"],
   "plague-blvd": ["Spread the Plague!"],
   wendigo: [],
   biv: [],
