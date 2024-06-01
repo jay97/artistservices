@@ -39,7 +39,7 @@ export const GREETINGS = {
   dirtybutt: [],
   kamaara: [],
   bvdlvd: ["HEY SKOTSKR! COULD YOU TURN IT DOWN?", "ITS BAD-LAD"],
-  skotskr: [],
+  skotskr: ["YUH"],
   mkultra: [],
   greg: [],
   jake: [],
