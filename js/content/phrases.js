@@ -32,7 +32,7 @@ export const GREETINGS = {
     "I got 8 arms !!!",
     "Gotta fully charge my laser...",
   ],
-  cherry: [],
+  cherry: ["NEED ME A CIG", "BADCHXRRY ON ME", "Wasssssuuup"],
   cubensis: [],
   cxrpse: [],
   deerdeath: [],
