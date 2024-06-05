@@ -1,0 +1,14 @@
+{
+  "name": "asllc",
+  "version": "1.0.0",
+  "description": "The official Artist Services website",
+  "main": "./js/main.js",
+  "scripts": {
+    "start": "serve ./"
+  },
+  "author": "Artist Services LLC",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

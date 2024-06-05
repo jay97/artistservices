@@ -1,91 +1,105 @@
 export default {
   frames: {
-    "skotskr-floor.png": {
+    "issbrokie-floor-1.png": {
       frame: { x: 0, y: 0, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "sorbet-floor.png": {
+    "issbrokie-floor-2.png": {
       frame: { x: 640, y: 0, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "steel-floor-1.png": {
+    "skotskr-floor.png": {
       frame: { x: 1280, y: 0, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "steel-floor-2.png": {
+    "sorbet-floor.png": {
       frame: { x: 0, y: 275, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "steel-floor-3.png": {
+    "steel-floor-1.png": {
       frame: { x: 640, y: 275, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "steel-floor-4.png": {
+    "steel-floor-2.png": {
       frame: { x: 1280, y: 275, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "steel-floor-5.png": {
+    "steel-floor-3.png": {
       frame: { x: 0, y: 550, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "steel-floor-6.png": {
+    "steel-floor-4.png": {
       frame: { x: 640, y: 550, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "wendigo-floor.png": {
+    "steel-floor-5.png": {
       frame: { x: 1280, y: 550, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "wes-floor-1.png": {
+    "steel-floor-6.png": {
       frame: { x: 0, y: 825, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "wes-floor-2.png": {
+    "wendigo-floor.png": {
       frame: { x: 640, y: 825, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "wes-floor-3.png": {
+    "wes-floor-1.png": {
       frame: { x: 1280, y: 825, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "wud-floor.png": {
+    "wes-floor-2.png": {
       frame: { x: 0, y: 1100, w: 640, h: 275 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
+      sourceSize: { w: 640, h: 275 },
+    },
+    "wes-floor-3.png": {
+      frame: { x: 640, y: 1100, w: 640, h: 275 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
+      sourceSize: { w: 640, h: 275 },
+    },
+    "wud-floor.png": {
+      frame: { x: 1280, y: 1100, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
@@ -93,6 +107,7 @@ export default {
     },
   },
   animations: {
+    "issbrokie-floor": ["issbrokie-floor-1.png", "issbrokie-floor-2.png"],
     "steel-floor": [
       "steel-floor-1.png",
       "steel-floor-2.png",
@@ -111,6 +126,6 @@ export default {
     size: { w: 1920, h: 1375 },
     scale: "1",
     smartupdate:
-      "$TexturePacker:SmartUpdate:03940584756ce804fe47d3e10f41c258:12b73ffa76e6fa4755d54eb0ec7cebd9:9605a5e1080add1a6b7d212a32337035$",
+      "$TexturePacker:SmartUpdate:61f1752793433448f6a61621bac6fde0:a666f33de0e3d695188f1762d3ec82d3:9605a5e1080add1a6b7d212a32337035$",
   },
 };
