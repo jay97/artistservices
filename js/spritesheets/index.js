@@ -32,15 +32,6 @@ const SPRITESHEETS = [
 export var progress = 0;
 export var totalProgress = SPRITESHEETS.length + 1;
 
-export function updateLoadingPercentage() {
-  progress++;
-
-  const loadingPercentage = document.getElementById("loading-percentage");
-  loadingPercentage.innerHTML = `${Math.floor(
-    (progress / totalProgress) * 100
-  )}%`;
-}
-
 export default async function loadSpritesheets() {
   progress = 0;
 
@@ -57,12 +48,12 @@ export default async function loadSpritesheets() {
         ...State.spritesheets,
         [key]: spritesheet,
       };
-
-      updateLoadingPercentage();
     })
   );
 
   const crane = await PIXI.Assets.load("./img/spritesheets/crane.gif");
   State.spritesheets.crane = crane;
-  updateLoadingPercentage();
+
+  const creeper = await PIXI.Assets.load("./img/sprites/misc/creeper.gif");
+  State.spritesheets.creeper = creeper;
 }
