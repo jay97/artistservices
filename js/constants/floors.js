@@ -30,6 +30,14 @@ export const FLOORS = {
       newgrounds: "https://shteppi.newgrounds.com/",
     },
   },
+  calder: {
+    name: "CALDER",
+    animationFrames: 4,
+    links: {
+      apple: "https://music.apple.com/artist/calder/1652163917",
+      spotify: "https://open.spotify.com/artist/3rfH5SRk6ekMfiBZ5KVYw9",
+    },
+  },
   changeline: {
     name: "Changeline",
     extras: [

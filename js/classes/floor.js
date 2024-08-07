@@ -232,7 +232,12 @@ export default class Floor {
     this.container.addChild(this.indicator);
   }
 
-  renderCreeper() {
+  async renderCreeper() {
+    if (!this.creeper) {
+      const creeper = await PIXI.Assets.load("./img/sprites/misc/creeper.gif");
+      this.creeper = creeper;
+    }
+
     if (this.id !== "wud" || (this.creeper && this.creeper.isPlaying)) {
       return;
     }
@@ -258,9 +263,7 @@ export default class Floor {
     this.creeper.onComplete = () => {
       this.creeper.visible = false;
       this.creeper.isPlaying = false;
-      setTimeout(() => {
-        this.renderCreeper();
-      }, 12000);
+      setTimeout(() => this.renderCreeper(), 12000);
     };
 
     this.container.addChild(this.creeper);

@@ -33,6 +33,7 @@ export const GREETINGS = {
   blckk: [],
   bruhmanegod: [],
   issbrokie: [":3"],
+  calder: [],
   changeline: [
     "Coucou les lesbiennes",
     "I got 8 arms !!!",
