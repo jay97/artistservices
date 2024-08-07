@@ -43,7 +43,7 @@ async function loadAssets() {
       resolve();
     });
 
-    await loadSecondarySpritesheets();
+    loadSecondarySpritesheets();
   });
 }
 

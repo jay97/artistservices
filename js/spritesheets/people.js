@@ -1113,7 +1113,7 @@ export default {
   meta: {
     app: "https://www.codeandweb.com/texturepacker",
     version: "1.1",
-    image: "./img/spritesheets/people.png",
+    image: "https://w-img.b-cdn.net/asllc/spritesheets/people.png",
     format: "RGBA8888",
     size: { w: 990, h: 1825 },
     scale: "1",

@@ -67,7 +67,9 @@ export async function loadSecondarySpritesheets() {
     })
   );
 
-  const crane = await PIXI.Assets.load("./img/spritesheets/crane.gif");
+  const crane = await PIXI.Assets.load(
+    "https://w-img.b-cdn.net/asllc/spritesheets/crane.gif"
+  );
   State.spritesheets.crane = crane;
 
   const creeper = await PIXI.Assets.load("./img/sprites/misc/creeper.gif");
