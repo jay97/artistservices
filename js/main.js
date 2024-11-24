@@ -13,13 +13,13 @@ import interval from "./interval.js";
 
 function initSentry() {
   if (
-    Sentry === undefined ||
+    window.Sentry === undefined ||
     !window.location.host.includes("artistservic.es")
   ) {
     return;
   }
 
-  Sentry.onLoad(() => {
+  window.Sentry.onLoad(() => {
     Sentry.init({
       tracesSampleRate: 1.0,
     });
