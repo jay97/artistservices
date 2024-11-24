@@ -55,3 +55,13 @@ export function isLargeSizedScreen(app) {
 
   return app.screen.width >= LARGE_DESKTOP_BREAKPOINT;
 }
+
+export function hasSlowConnection() {
+  try {
+    const connectionEffectiveType = navigator.connection.effectiveType;
+
+    return ["slow-2g", "2g", "3g"].includes(connectionEffectiveType);
+  } catch {
+    return false;
+  }
+}

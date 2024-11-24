@@ -1,3 +1,4 @@
+import { hasSlowConnection } from "../utils.js";
 import State from "../classes/state.js";
 import people from "./people.js";
 import misc from "./misc.js";
@@ -51,8 +52,30 @@ export async function loadSpritesheets() {
 }
 
 export async function loadSecondarySpritesheets() {
-  await Promise.all(
-    SECONDARY_SPRITESHEETS.map(async ({ key, value }) => {
+  const slowConnection = hasSlowConnection();
+
+  const loadCrane = async () => {
+    const crane = await PIXI.Assets.load(
+      "https://w-img.b-cdn.net/asllc/spritesheets/crane-short-2.gif"
+    );
+    State.spritesheets.crane = crane;
+  };
+
+  const loadCreeper = async () => {
+    if (slowConnection) {
+      return;
+    }
+
+    const creeper = await PIXI.Assets.load(
+      "https://w-img.b-cdn.net/asllc/spritesheets/creeper.gif"
+    );
+    State.spritesheets.creeper = creeper;
+  };
+
+  await Promise.all([
+    loadCrane(),
+    loadCreeper(),
+    ...SECONDARY_SPRITESHEETS.map(async ({ key, value }) => {
       const spritesheet = new PIXI.Spritesheet(
         PIXI.BaseTexture.from(value.meta.image),
         value
@@ -64,14 +87,6 @@ export async function loadSecondarySpritesheets() {
         ...State.spritesheets,
         [key]: spritesheet,
       };
-    })
-  );
-
-  const crane = await PIXI.Assets.load(
-    "https://w-img.b-cdn.net/asllc/spritesheets/crane.gif"
-  );
-  State.spritesheets.crane = crane;
-
-  const creeper = await PIXI.Assets.load("./img/sprites/misc/creeper.gif");
-  State.spritesheets.creeper = creeper;
+    }),
+  ]);
 }

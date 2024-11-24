@@ -13,14 +13,13 @@ import interval from "./interval.js";
 
 function initSentry() {
   if (
-    window.Sentry === undefined ||
-    window.location.host !== "artistservic.es"
+    Sentry === undefined ||
+    !window.location.host.includes("artistservic.es")
   ) {
-    console.log("Sentry not initialized");
     return;
   }
 
-  window.Sentry.onLoad(() => {
+  Sentry.onLoad(() => {
     Sentry.init({
       tracesSampleRate: 1.0,
     });
@@ -45,8 +44,7 @@ async function loadAssets() {
 
     message.innerHTML = "Loading sprites...";
 
-    await loadSpritesheets();
-    loadSecondarySpritesheets();
+    await Promise.all([loadSpritesheets(), loadSecondarySpritesheets()]);
 
     message.remove();
 

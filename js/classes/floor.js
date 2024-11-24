@@ -55,7 +55,9 @@ export default class Floor {
     this.rightWall = basement
       ? PIXI.Sprite.from("underground-wall.png")
       : PIXI.Sprite.from("right-wall.png");
-    this.separator = PIXI.Sprite.from("./img/sprites/separator-new.png");
+    this.separator = PIXI.Sprite.from(
+      "https://w-img.b-cdn.net/asllc/spritesheets/separator-new.png"
+    );
     this.numberText = new PIXI.Text("", {
       ...TEXT_STYLES.default,
     });
@@ -232,12 +234,7 @@ export default class Floor {
     this.container.addChild(this.indicator);
   }
 
-  async renderCreeper() {
-    if (!this.creeper) {
-      const creeper = await PIXI.Assets.load("./img/sprites/misc/creeper.gif");
-      this.creeper = creeper;
-    }
-
+  renderCreeper() {
     if (this.id !== "wud" || (this.creeper && this.creeper.isPlaying)) {
       return;
     }
@@ -245,6 +242,10 @@ export default class Floor {
     const scale = State.scale();
 
     this.creeper = this.creeper ? this.creeper : State.spritesheets.creeper;
+
+    if (!this.creeper) {
+      return;
+    }
 
     this.creeper.position.set(
       this.room.position.x - this.room.width / 2 + 180 * scale,
