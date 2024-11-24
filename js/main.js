@@ -11,6 +11,12 @@ import animate from "./animate.js";
 import events from "./events.js";
 import interval from "./interval.js";
 
+Sentry.onLoad(() => {
+  Sentry.init({
+    tracesSampleRate: 1.0,
+  });
+});
+
 async function loadAssets() {
   return new Promise(async (resolve) => {
     const loading = document.getElementById("loading");
@@ -30,6 +36,7 @@ async function loadAssets() {
     message.innerHTML = "Loading sprites...";
 
     await loadSpritesheets();
+    loadSecondarySpritesheets();
 
     message.remove();
 
@@ -42,8 +49,6 @@ async function loadAssets() {
         ?.setAttribute("content", "#4f8fba");
       resolve();
     });
-
-    loadSecondarySpritesheets();
   });
 }
 

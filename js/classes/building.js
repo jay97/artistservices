@@ -168,16 +168,18 @@ export default class Building {
       return 38;
     };
 
-    this.crane.position.set(
-      this.roof.position.x + offsetX(),
-      this.roof.position.y - offsetY()
-    );
+    if (this.crane) {
+      this.crane.position.set(
+        this.roof.position.x + offsetX(),
+        this.roof.position.y - offsetY()
+      );
 
-    this.crane.scale.y = scale;
-    this.crane.scale.x = scale;
-    this.crane.anchor.set(0.5);
+      this.crane.scale.y = scale;
+      this.crane.scale.x = scale;
+      this.crane.anchor.set(0.5);
 
-    State.app.stage.addChild(this.crane);
+      State.app.stage.addChild(this.crane);
+    }
   }
 
   static renderUndergroundFoundation() {
