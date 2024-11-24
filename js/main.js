@@ -11,11 +11,21 @@ import animate from "./animate.js";
 import events from "./events.js";
 import interval from "./interval.js";
 
-Sentry.onLoad(() => {
-  Sentry.init({
-    tracesSampleRate: 1.0,
+function initSentry() {
+  if (
+    window.Sentry === undefined ||
+    window.location.host !== "artistservic.es"
+  ) {
+    console.log("Sentry not initialized");
+    return;
+  }
+
+  window.Sentry.onLoad(() => {
+    Sentry.init({
+      tracesSampleRate: 1.0,
+    });
   });
-});
+}
 
 async function loadAssets() {
   return new Promise(async (resolve) => {
@@ -53,6 +63,8 @@ async function loadAssets() {
 }
 
 async function main() {
+  initSentry();
+
   await loadAssets();
 
   const app = new PIXI.Application({
