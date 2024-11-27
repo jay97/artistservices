@@ -55,21 +55,31 @@ export async function loadSecondarySpritesheets() {
   const slowConnection = hasSlowConnection();
 
   const loadCrane = async () => {
-    const crane = await PIXI.Assets.load(
-      "https://w-img.b-cdn.net/asllc/spritesheets/crane-short-2.gif"
-    );
-    State.spritesheets.crane = crane;
+    try {
+      const crane = await PIXI.Assets.load(
+        "https://w-img.b-cdn.net/asllc/spritesheets/crane-short-2.gif"
+      );
+
+      State.spritesheets.crane = crane;
+    } catch (error) {
+      console.error(error.message);
+    }
   };
 
   const loadCreeper = async () => {
-    if (slowConnection) {
-      return;
-    }
+    try {
+      if (slowConnection) {
+        return;
+      }
 
-    const creeper = await PIXI.Assets.load(
-      "https://w-img.b-cdn.net/asllc/spritesheets/creeper.gif"
-    );
-    State.spritesheets.creeper = creeper;
+      const creeper = await PIXI.Assets.load(
+        "https://w-img.b-cdn.net/asllc/spritesheets/creeper.gif"
+      );
+
+      State.spritesheets.creeper = creeper;
+    } catch (error) {
+      console.error(error.message);
+    }
   };
 
   await Promise.all([
