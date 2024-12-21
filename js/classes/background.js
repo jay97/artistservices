@@ -605,8 +605,8 @@ export default class Background {
     this.renderClouds();
     this.renderPlane();
     this.renderBlimp();
-    this.renderSnow();
     this.renderBuildings();
+    this.renderSnow();
     this.renderGround();
     this.renderFossil();
     this.renderCar();
