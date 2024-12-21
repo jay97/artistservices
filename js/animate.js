@@ -8,6 +8,7 @@ export default async function animate() {
   Background.animateClouds();
   Background.animatePlane();
   Background.animateBlimp();
+  Background.animateSnow();
 
   State.people.forEach((person) => person.animate());
 

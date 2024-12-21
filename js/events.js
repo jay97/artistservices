@@ -1,5 +1,6 @@
 import { isMobileSizedScreen } from "./utils.js";
 import { animateCamera } from "./animate.js";
+import MusicPlayer from "./classes/music.js";
 import Building from "./classes/building.js";
 import Interface from "./classes/interface.js";
 import Modal from "./classes/modal.js";
@@ -30,7 +31,7 @@ function handleScroll() {
   const scrollAmount = 16;
 
   const scrollUp = (event) => {
-    if (!State.introFinished || Modal.visible) {
+    if (!State.introFinished || Modal.visible || MusicPlayer.isOpen) {
       return;
     }
 
@@ -48,7 +49,7 @@ function handleScroll() {
   };
 
   const scrollDown = (event) => {
-    if (!State.introFinished || Modal.visible) {
+    if (!State.introFinished || Modal.visible || MusicPlayer.isOpen) {
       return;
     }
 
@@ -74,7 +75,7 @@ function handleScroll() {
   };
 
   const scrollEnd = (event) => {
-    if (!State.introFinished || Modal.visible) {
+    if (!State.introFinished || Modal.visible || MusicPlayer.isOpen) {
       return;
     }
     const velocity =

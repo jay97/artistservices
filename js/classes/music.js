@@ -48,6 +48,7 @@ export default class MusicPlayer {
     prevTrack: document.getElementById("music-player-prev-track"),
     close: document.getElementById("music-player-close"),
     duration: document.getElementById("music-player-duration"),
+    trackList: document.getElementById("music-player-track-list"),
   };
 
   static {
@@ -75,12 +76,44 @@ export default class MusicPlayer {
     );
   }
 
+  static get isOpen() {
+    return MusicPlayer.elements.container.classList.contains("show");
+  }
+
   static open() {
     MusicPlayer.elements.container.classList.add("show");
   }
 
   static close() {
     MusicPlayer.elements.container.classList.remove("show");
+  }
+
+  static renderTrackList() {
+    const trackList = [`<h4>Track List (${TRACKS.length})</h4>`];
+
+    TRACKS.forEach((track) => {
+      const title = track.title;
+      const isCurrentTrack = MusicPlayer.currentTrackTitle === title;
+
+      trackList.push(`
+        <button id="track-list-${track.title}" ${
+        isCurrentTrack ? 'class="current"' : ""
+      }><span>&gt;</span>${
+        title.length > 30 ? title.slice(0, 30) + "..." : title
+      }</button>
+      `);
+    });
+
+    MusicPlayer.elements.trackList.innerHTML = trackList.join(" ");
+
+    MusicPlayer.elements.trackList
+      .querySelectorAll("button")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          const trackId = button.id.replace("track-list-", "");
+          MusicPlayer.playTrack(trackId);
+        });
+      });
   }
 
   static updateTrackInfo() {
@@ -90,6 +123,8 @@ export default class MusicPlayer {
         ${`<li>${MusicPlayer.currentTrackTitle}</li>`.repeat(2)}
       </ul>
     `;
+
+    MusicPlayer.renderTrackList();
   }
 
   static whilePlaying() {
@@ -140,6 +175,24 @@ export default class MusicPlayer {
     }
 
     MusicPlayer.updateTrackInfo();
+  }
+
+  static playTrack(trackId) {
+    MusicPlayer.pauseTime = 0;
+
+    const trackNumber = TRACKS.findIndex(
+      (track) => track.title === trackId || track.fileName === trackId
+    );
+    const track = TRACKS[trackNumber];
+
+    if (track) {
+      MusicPlayer.currentTrackNumber = trackNumber;
+    } else {
+      MusicPlayer.currentTrackNumber = 0;
+    }
+
+    MusicPlayer.updateTrackInfo();
+    MusicPlayer.play();
   }
 
   static next() {

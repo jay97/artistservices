@@ -6,11 +6,12 @@ import State from "./state.js";
 
 export default class Background {
   static sky = new PIXI.Graphics();
-
+  static snow = [];
   static sun = null;
   static clouds = [];
   static buildings = [];
   static ground = new PIXI.Graphics();
+  static groundSnow = new PIXI.Graphics();
   static dirt = null;
   static moreDirt = null;
   static fossil = null;
@@ -81,6 +82,122 @@ export default class Background {
 
     [...this.clouds].flat().forEach((cloud) => {
       cloud.position.y = cloud.initialPosition.y + State.app.stage.pivot.y;
+    });
+
+    this.snow.forEach((snowflake) => {
+      snowflake.position.y = snowflake.currentY + State.app.stage.pivot.y;
+    });
+  }
+
+  static renderSnow() {
+    const scale = State.scale();
+    const snowflakeSize = 8 * scale;
+    const numberOfSnowflakes = 200;
+
+    this.snow = this.snow || [];
+
+    for (let i = 0; i < numberOfSnowflakes; i++) {
+      let snowflake;
+
+      if (this.snow[i]) {
+        snowflake = this.snow[i];
+        snowflake.clear();
+      } else {
+        snowflake = new PIXI.Graphics();
+        this.snow[i] = snowflake;
+      }
+
+      // Random starting position
+      const positionX = Math.random() * State.app.screen.width;
+      const positionY = Math.random() * -State.app.screen.height;
+
+      snowflake.initialPosition = {
+        x: positionX,
+        y: positionY,
+      };
+
+      // Draw snowflake
+      snowflake.beginFill(COLORS.white);
+      snowflake.drawRect(
+        -snowflakeSize / 2,
+        -snowflakeSize / 2,
+        snowflakeSize,
+        snowflakeSize
+      );
+      snowflake.drawRect(
+        -snowflakeSize / 2,
+        -snowflakeSize * 1.5,
+        snowflakeSize,
+        snowflakeSize
+      );
+      snowflake.drawRect(
+        -snowflakeSize / 2,
+        snowflakeSize / 2,
+        snowflakeSize,
+        snowflakeSize
+      );
+      snowflake.drawRect(
+        -snowflakeSize * 1.5,
+        -snowflakeSize / 2,
+        snowflakeSize,
+        snowflakeSize
+      );
+      snowflake.drawRect(
+        snowflakeSize / 2,
+        -snowflakeSize / 2,
+        snowflakeSize,
+        snowflakeSize
+      );
+
+      snowflake.endFill();
+
+      snowflake.position.set(positionX, positionY);
+
+      snowflake.speed = Math.random() * 1.5 + 0.5;
+      snowflake.sway = Math.random() * 1.5 - 0.75;
+      snowflake.swaySpeed = Math.random() * 0.01;
+      snowflake.angle = Math.random() * Math.PI * 2;
+      snowflake.currentY = positionY;
+
+      State.app.stage.addChild(snowflake);
+    }
+  }
+
+  static animateSnow() {
+    const groundY =
+      State.app.screen.height -
+      Interface.navBar.height() -
+      State.app.stage.pivot.y;
+
+    this.snow.forEach((snowflake) => {
+      State.app.ticker.add((delta) => {
+        snowflake.currentY = snowflake.currentY + snowflake.speed * delta;
+        const newX = Math.round(
+          snowflake.initialPosition.x +
+            Math.sin(snowflake.angle) * snowflake.sway * delta
+        );
+
+        snowflake.angle += snowflake.swaySpeed * delta;
+
+        snowflake.position.x = newX;
+        snowflake.position.y =
+          Math.round(snowflake.currentY) + State.app.stage.pivot.y;
+
+        // Reset if snowflake reaches ground or goes off-screen
+        if (
+          snowflake.currentY > groundY ||
+          snowflake.position.x < -snowflake.width ||
+          snowflake.position.x > State.app.screen.width + snowflake.width
+        ) {
+          snowflake.position.x = Math.round(
+            Math.random() * State.app.screen.width
+          );
+          snowflake.currentY = -snowflake.height;
+          snowflake.initialPosition.x = snowflake.position.x;
+          snowflake.initialPosition.y = snowflake.currentY;
+          snowflake.angle = Math.random() * Math.PI * 2;
+        }
+      });
     });
   }
 
@@ -283,6 +400,21 @@ export default class Background {
     this.dirt.position.set(0, positionY + this.dirt.height / 2);
 
     State.app.stage.addChild(this.dirt);
+
+    // Top layer of snow
+    const groundSnowHeight = 24 * scale;
+    this.groundSnow.clear();
+
+    this.groundSnow.beginFill(COLORS.white);
+    this.groundSnow.drawRect(
+      0,
+      positionY - groundSnowHeight,
+      width,
+      groundSnowHeight
+    );
+    this.groundSnow.endFill();
+
+    State.app.stage.addChild(this.groundSnow);
   }
 
   static renderFossil() {
@@ -473,6 +605,7 @@ export default class Background {
     this.renderClouds();
     this.renderPlane();
     this.renderBlimp();
+    this.renderSnow();
     this.renderBuildings();
     this.renderGround();
     this.renderFossil();
