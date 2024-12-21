@@ -6,6 +6,12 @@ import Elevator from "./elevator.js";
 import ChatBubble from "./chat-bubble.js";
 import State from "./state.js";
 
+const scaleHat = (hat) => {
+  const scale = State.scale();
+  hat.scale.y = scale * 1;
+  hat.scale.x = scale * 1;
+};
+
 const getMetadata = (name) => {
   return SPRITE_METADATA[name] || null;
 };
@@ -34,6 +40,12 @@ export default class Person {
       : "right";
 
     this.chatBubble = new ChatBubble(this);
+
+    if (!this.extra) {
+      this.hat = PIXI.Sprite.from("./img/sprites/christmas-hat.png");
+      scaleHat(this.hat);
+      this.hat.anchor.set(0.45, 0.3);
+    }
   }
 
   set startingPosition(position) {
@@ -225,7 +237,18 @@ export default class Person {
       this.character.position.y = Elevator.shaft.position.y - offset;
       this.destination = null;
       this.character.filters = this.filters || [];
+
       State.app.stage.addChild(this.character);
+
+      if (this.hat) {
+        scaleHat(this.hat);
+        this.hat.position.x =
+          this.character.position.x + this.character.width / 2;
+        this.hat.position.y = this.character.position.y - 10 * scale;
+
+        State.app.stage.addChild(this.hat);
+      }
+
       return;
     }
 
@@ -286,6 +309,27 @@ export default class Person {
     this.character.loop = true;
 
     State.app.stage.addChild(this.character);
+
+    if (this.hat) {
+      scaleHat(this.hat);
+      this.hat.position.x = this.character.position.x;
+      this.hat.position.y =
+        this.character.position.y - this.character.height / 2;
+
+      if (this.direction === "right") {
+        this.hat.scale.x = -scale;
+      } else {
+        this.hat.scale.x = scale;
+      }
+
+      if (isUpsideDown) {
+        this.hat.position.y =
+          this.character.position.y + this.character.height / 2;
+        this.hat.scale.y = -scale;
+      }
+
+      State.app.stage.addChild(this.hat);
+    }
 
     this.character.filters = this.filters || [];
   }

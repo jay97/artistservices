@@ -49,7 +49,7 @@ export default class Background {
     this.nightSky.endFill();
 
     this.nightSky.filters = this.nightSky.filters || [
-      State.filters.opacity(0.5),
+      State.filters.opacity(0.2),
     ];
 
     State.app.stage.addChild(this.nightSky);

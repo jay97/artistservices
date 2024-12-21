@@ -1,3 +1,5 @@
+import { isMobileSizedScreen } from "../utils.js";
+
 const TRACKS = [
   {
     fileName: "000017_-_peaceful_street_90_bpm_prod._brahman.mp3",
@@ -95,12 +97,18 @@ export default class MusicPlayer {
       const title = track.title;
       const isCurrentTrack = MusicPlayer.currentTrackTitle === title;
 
+      const trimmedTitle = () => {
+        if (isMobileSizedScreen()) {
+          return title.length > 27 ? title.slice(0, 27) + "..." : title;
+        }
+
+        return title.length > 30 ? title.slice(0, 30) + "..." : title;
+      };
+
       trackList.push(`
         <button id="track-list-${track.title}" ${
         isCurrentTrack ? 'class="current"' : ""
-      }><span>&gt;</span>${
-        title.length > 30 ? title.slice(0, 30) + "..." : title
-      }</button>
+      }><span>&gt;</span>${trimmedTitle()}</button>
       `);
     });
 

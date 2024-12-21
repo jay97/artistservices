@@ -56,6 +56,10 @@ canvas {
   object-fit: contain;
 }
 
+#logo-alt {
+  margin-bottom: -20px;
+}
+
 #loading h1 {
   all: unset;
   font-family: "Nokia", monospace;
@@ -420,6 +424,7 @@ hr {
 
 #enter-button {
   all: unset;
+  position: relative;
   cursor: pointer;
   display: none;
   align-items: center;
@@ -549,6 +554,14 @@ hr {
 
   #music-player-close {
     right: -12px;
+  }
+
+  #music-player-track-list {
+    max-height: 50vh;
+  }
+
+  #music-player-track-list button {
+    padding: 8px;
   }
 }
 
