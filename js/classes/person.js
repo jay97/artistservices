@@ -43,7 +43,7 @@ export default class Person {
 
     if (!this.extra && this.hat) {
       // this.hat = PIXI.Sprite.from("./img/sprites/christmas-hat.png");
-      this.hate = PIXI.Sprite.from(this.hat);
+      this.hat = PIXI.Sprite.from(this.hat);
       scaleHat(this.hat);
       this.hat.anchor.set(0.45, 0.3);
     }
