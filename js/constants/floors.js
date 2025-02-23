@@ -20,7 +20,7 @@ export const FLOORS = {
       soundcloud: "https://soundcloud.com/biv",
     },
   },
-  issbrokie: {
+  shteppi: {
     name: "SHTEPPI",
     animationFrames: 2,
     links: {
@@ -29,6 +29,14 @@ export const FLOORS = {
       spotify: "https://open.spotify.com/artist/23GnlSzW49oADOGGjvyfEI",
       newgrounds: "https://shteppi.newgrounds.com/",
     },
+    extras: [
+      {
+        name: "glorbo",
+        moves: true,
+        positionX: 465,
+        positionY: -80,
+      },
+    ],
   },
   godhand: {
     name: "GODHANDUSA",

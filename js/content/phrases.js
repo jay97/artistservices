@@ -32,7 +32,7 @@ export const GREETINGS = {
   biv: [],
   blckk: [],
   bruhmanegod: [],
-  issbrokie: [":3"],
+  shteppi: [":3"],
   calder: [],
   changeline: [
     "Coucou les lesbiennes",

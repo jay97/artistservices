@@ -28,14 +28,14 @@ export default {
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "issbrokie-floor-1.png": {
+    "shteppi-floor-1.png": {
       frame: { x: 640, y: 275, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "issbrokie-floor-2.png": {
+    "shteppi-floor-2.png": {
       frame: { x: 1280, y: 275, w: 640, h: 275 },
       rotated: false,
       trimmed: false,
@@ -141,7 +141,7 @@ export default {
       "calder-floor-3.png",
       "calder-floor-4.png",
     ],
-    "issbrokie-floor": ["issbrokie-floor-1.png", "issbrokie-floor-2.png"],
+    "shteppi-floor": ["shteppi-floor-1.png", "shteppi-floor-2.png"],
     "steel-floor": [
       "steel-floor-1.png",
       "steel-floor-2.png",

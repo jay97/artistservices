@@ -241,7 +241,11 @@ export default class Person {
   }
 
   render(delta) {
-    const scale = State.scale();
+    let scale = State.scale();
+
+    if (this.name === "glorbo") {
+      scale = State.scale() * 3;
+    }
 
     if (this.inElevator) {
       this.character.scale.y = scale * 2;
