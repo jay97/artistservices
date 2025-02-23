@@ -136,4 +136,11 @@ export const SPRITE_METADATA = {
     positionX: 80,
     positionY: 0,
   },
+  mongo: {
+    extra: true,
+    moves: true,
+    speaks: true,
+    positionX: 0,
+    positionY: -110,
+  },
 };

@@ -1,6 +1,7 @@
 import { hasSlowConnection } from "../utils.js";
 import State from "../classes/state.js";
 import people from "./people.js";
+import people2 from "./people-2.js";
 import misc from "./misc.js";
 import floors1 from "./floors-1.js";
 import floors2 from "./floors-2.js";
@@ -16,6 +17,7 @@ import blimp from "./blimp.js";
 
 const SPRITESHEETS = [
   { key: "people", value: people },
+  { key: "people-2", value: people2 },
   { key: "green-building", value: greenBuilding },
   { key: "red-building", value: redBuilding },
   { key: "floors-1", value: floors1 },

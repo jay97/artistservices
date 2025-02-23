@@ -21,7 +21,7 @@ export const FLOORS = {
     },
   },
   issbrokie: {
-    name: "ISSBROKIE",
+    name: "SHTEPPI",
     animationFrames: 2,
     links: {
       apple: "https://music.apple.com/gb/artist/issbrokie/1590304987",
@@ -29,6 +29,24 @@ export const FLOORS = {
       spotify: "https://open.spotify.com/artist/23GnlSzW49oADOGGjvyfEI",
       newgrounds: "https://shteppi.newgrounds.com/",
     },
+  },
+  godhand: {
+    name: "GODHANDUSA",
+    animationFrames: 4,
+    links: {
+      apple: "https://music.apple.com/us/artist/godhandusa/1750735255",
+      ig: "https://www.instagram.com/godhandusa/",
+      spotify: "https://open.spotify.com/artist/52XZBIfTRn9iyM7QLf6DmX",
+      youtube: "https://music.youtube.com/channel/UCA6STegBx-9ja9SIubJOJaw",
+    },
+    extras: [
+      {
+        name: "mongo",
+        moves: true,
+        positionX: 0,
+        positionY: -110,
+      },
+    ],
   },
   calder: {
     name: "CALDER",

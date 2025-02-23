@@ -1,0 +1,80 @@
+export default {
+  frames: {
+    "godhand-1.png": {
+      frame: { x: 0, y: 0, w: 90, h: 110 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 90, h: 110 },
+      sourceSize: { w: 90, h: 110 },
+    },
+    "godhand-2.png": {
+      frame: { x: 90, y: 0, w: 90, h: 110 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 90, h: 110 },
+      sourceSize: { w: 90, h: 110 },
+    },
+    "godhand-floor-1.png": {
+      frame: { x: 180, y: 0, w: 640, h: 275 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
+      sourceSize: { w: 640, h: 275 },
+    },
+    "godhand-floor-2.png": {
+      frame: { x: 820, y: 0, w: 640, h: 275 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
+      sourceSize: { w: 640, h: 275 },
+    },
+    "godhand-floor-3.png": {
+      frame: { x: 0, y: 275, w: 640, h: 275 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
+      sourceSize: { w: 640, h: 275 },
+    },
+    "godhand-floor-4.png": {
+      frame: { x: 640, y: 275, w: 640, h: 275 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
+      sourceSize: { w: 640, h: 275 },
+    },
+    "mongo-1.png": {
+      frame: { x: 1280, y: 275, w: 90, h: 110 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 90, h: 110 },
+      sourceSize: { w: 90, h: 110 },
+    },
+    "mongo-2.png": {
+      frame: { x: 1370, y: 275, w: 90, h: 110 },
+      rotated: false,
+      trimmed: false,
+      spriteSourceSize: { x: 0, y: 0, w: 90, h: 110 },
+      sourceSize: { w: 90, h: 110 },
+    },
+  },
+  animations: {
+    godhand: ["godhand-1.png", "godhand-2.png"],
+    "godhand-floor": [
+      "godhand-floor-1.png",
+      "godhand-floor-2.png",
+      "godhand-floor-3.png",
+      "godhand-floor-4.png",
+    ],
+    mongo: ["mongo-1.png", "mongo-2.png"],
+  },
+  meta: {
+    app: "https://www.codeandweb.com/texturepacker",
+    version: "1.1",
+    image: "https://w-img.b-cdn.net/asllc/spritesheets/people-2.png",
+    format: "RGBA8888",
+    size: { w: 1460, h: 550 },
+    scale: "1",
+    smartupdate:
+      "$TexturePacker:SmartUpdate:d7a2cabdbbcf9f55210be49f5e8601ae:8042566f4a7b79f8043b92cf2597ece8:ded69617d474a27815bfcaf32c6c6a8d$",
+  },
+};

@@ -1,4 +1,5 @@
 import { SPRITE_METADATA } from "../constants/sprites.js";
+import { FLOORS } from "../constants/floors.js";
 import { randomNumberBetween } from "../utils.js";
 import Interface from "./interface.js";
 import Building from "./building.js";
@@ -16,6 +17,16 @@ const getMetadata = (name) => {
   return SPRITE_METADATA[name] || null;
 };
 
+const isExtra = (name, metadata) => {
+  if (metadata && metadata.extra) {
+    return true;
+  }
+
+  return Object.values(FLOORS).find((floor) => {
+    return floor.extras && floor.extras.find((extra) => extra.name === name);
+  });
+};
+
 export default class Person {
   offsetY = 0;
 
@@ -25,14 +36,21 @@ export default class Person {
     this.originalFloorNumber = 0;
     this.inElevator = false;
 
-    const sprites = State.spritesheets.people.animations[name];
+    const sprites = (() => {
+      return (
+        State.spritesheets.people.animations[name] ||
+        State.spritesheets["people-2"].animations[name]
+      );
+    })();
+
     this.character = new PIXI.AnimatedSprite(sprites);
+
     this.highlight = false;
 
     this.destination = null;
     this.walkRandomly = true;
     this.metadata = getMetadata(name);
-    this.extra = this.metadata && this.metadata.extra;
+    this.extra = isExtra(this.name, this.metadata);
     this.direction = this.extra
       ? "left"
       : Math.random() < 0.5
@@ -42,7 +60,6 @@ export default class Person {
     this.chatBubble = new ChatBubble(this);
 
     if (!this.extra && this.hat) {
-      // this.hat = PIXI.Sprite.from("./img/sprites/christmas-hat.png");
       this.hat = PIXI.Sprite.from(this.hat);
       scaleHat(this.hat);
       this.hat.anchor.set(0.45, 0.3);

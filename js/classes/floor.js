@@ -92,6 +92,12 @@ export default class Floor {
     );
   }
 
+  extraOnFloor() {
+    return State.people.find(
+      (person) => person.floorNumber === this.number && person.extra
+    );
+  }
+
   get width() {
     return () => 1720 * State.scale();
   }
@@ -184,6 +190,18 @@ export default class Floor {
           greetings.length > 0 ? greetings : GREETINGS.all
         );
         person.chatBubble.show(randomMessage);
+      }
+
+      const extra = this.extraOnFloor();
+      if (extra && extra.metadata && extra.metadata.speaks) {
+        setTimeout(() => {
+          try {
+            const randomMessage = getRandomElementFromArray(GREETINGS.all);
+            extra.chatBubble.show(randomMessage);
+          } catch {
+            // Do nothing
+          }
+        }, 500);
       }
 
       Interface.setArtistInfo(this.id);
