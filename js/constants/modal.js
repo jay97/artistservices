@@ -23,8 +23,14 @@ export const MODALS = {
       <hr />
       ${FOOTER_TEXT.map((text) => `<div>${text}</div>`).join("\n")}
       ${EMAILS.map(
-        (email) =>
-          `<div><a href="mailto:${email.value}">${email.label}</a></div>`
+        (email) => `
+          <div class="email">
+            <a href="mailto:${email.value}">
+              <img src="https://w-img.b-cdn.net/asllc/icons/solid-mail.png" alt="" />
+              ${email.label}
+            </a>
+          </div>
+        `
       ).join("\n")}
     `,
   },

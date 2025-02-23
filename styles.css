@@ -383,6 +383,7 @@ canvas {
 
 .lead {
   color: #fff;
+  padding: 32px 0;
 }
 
 .tours {
@@ -668,5 +669,45 @@ input[type="range"]:active::-ms-thumb {
   }
   to {
     transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+#modal .email {
+  display: flex;
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+#modal .email img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1) brightness(0.8) drop-shadow(2px 2px 0 #696163);
+}
+
+#modal .email a {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Tiny Tower", monospace;
+  text-shadow: 2px 2px 0px #696163;
+  color: #e6d7cc;
+  background-color: #5c7c94;
+  box-shadow: 4px 4px 0px #2e4c5e;
+  padding: 4px;
+  width: 100%;
+}
+
+#modal .email a:hover {
+  color: #fff;
+  background-color: #e8c170;
+  box-shadow: 4px 4px 0px #be772b;
+
+  img {
+    filter: invert(1) brightness(1) drop-shadow(2px 2px 0 #696163);
   }
 }
