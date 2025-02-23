@@ -24,9 +24,9 @@ export const FLOORS = {
     name: "SHTEPPI",
     animationFrames: 2,
     links: {
-      apple: "https://music.apple.com/gb/artist/issbrokie/1590304987",
-      ig: "http://instagram.com/issbrokie/",
-      spotify: "https://open.spotify.com/artist/23GnlSzW49oADOGGjvyfEI",
+      apple: "https://music.apple.com/gb/artist/shteppi/1772480003",
+      ig: "http://instagram.com/shteppi/",
+      spotify: "https://open.spotify.com/artist/0MWnJHMAZneJ1JA6S8Fx1b",
       newgrounds: "https://shteppi.newgrounds.com/",
     },
   },
@@ -37,7 +37,7 @@ export const FLOORS = {
       apple: "https://music.apple.com/us/artist/godhandusa/1750735255",
       ig: "https://www.instagram.com/godhandusa/",
       spotify: "https://open.spotify.com/artist/52XZBIfTRn9iyM7QLf6DmX",
-      youtube: "https://music.youtube.com/channel/UCA6STegBx-9ja9SIubJOJaw",
+      youtube: "https://www.youtube.com/@GODHANDUSA",
     },
     extras: [
       {
