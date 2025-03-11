@@ -24,6 +24,8 @@ export const GREETINGS = {
   wud: [
     "[Intentional Website Design]",
     "SPREADSHEETS!",
+    "NUKED!",
+    "CLIENT SUCCESS!",
     "BAN GOOGLE SHEETS!",
     "AW, MAN!",
   ],
