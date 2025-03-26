@@ -34,7 +34,7 @@ export const FLOORS = {
         name: "glorbo",
         moves: true,
         positionX: 465,
-        positionY: -80,
+        positionY: -30,
       },
     ],
   },

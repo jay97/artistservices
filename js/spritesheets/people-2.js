@@ -1,28 +1,28 @@
 export default {
   frames: {
     "glorbo-1.png": {
-      frame: { x: 0, y: 0, w: 13, h: 20 },
+      frame: { x: 0, y: 0, w: 35, h: 30 },
       rotated: false,
       trimmed: false,
-      spriteSourceSize: { x: 0, y: 0, w: 13, h: 20 },
-      sourceSize: { w: 13, h: 20 },
+      spriteSourceSize: { x: 0, y: 0, w: 35, h: 30 },
+      sourceSize: { w: 35, h: 30 },
     },
     "glorbo-2.png": {
-      frame: { x: 13, y: 0, w: 13, h: 20 },
+      frame: { x: 35, y: 0, w: 35, h: 30 },
       rotated: false,
       trimmed: false,
-      spriteSourceSize: { x: 0, y: 0, w: 13, h: 20 },
-      sourceSize: { w: 13, h: 20 },
+      spriteSourceSize: { x: 0, y: 0, w: 35, h: 30 },
+      sourceSize: { w: 35, h: 30 },
     },
     "godhand-1.png": {
-      frame: { x: 146, y: 0, w: 90, h: 110 },
+      frame: { x: 190, y: 0, w: 90, h: 110 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 90, h: 110 },
       sourceSize: { w: 90, h: 110 },
     },
     "godhand-2.png": {
-      frame: { x: 236, y: 0, w: 90, h: 110 },
+      frame: { x: 280, y: 0, w: 90, h: 110 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 90, h: 110 },
@@ -57,28 +57,28 @@ export default {
       sourceSize: { w: 640, h: 275 },
     },
     "mongo-1.png": {
-      frame: { x: 326, y: 0, w: 90, h: 110 },
+      frame: { x: 370, y: 0, w: 90, h: 110 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 90, h: 110 },
       sourceSize: { w: 90, h: 110 },
     },
     "mongo-2.png": {
-      frame: { x: 416, y: 0, w: 90, h: 110 },
+      frame: { x: 460, y: 0, w: 90, h: 110 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 90, h: 110 },
       sourceSize: { w: 90, h: 110 },
     },
     "shteppi-1.png": {
-      frame: { x: 26, y: 0, w: 60, h: 90 },
+      frame: { x: 70, y: 0, w: 60, h: 90 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 60, h: 90 },
       sourceSize: { w: 60, h: 90 },
     },
     "shteppi-2.png": {
-      frame: { x: 86, y: 0, w: 60, h: 90 },
+      frame: { x: 130, y: 0, w: 60, h: 90 },
       rotated: false,
       trimmed: false,
       spriteSourceSize: { x: 0, y: 0, w: 60, h: 90 },
@@ -100,11 +100,11 @@ export default {
   meta: {
     app: "https://www.codeandweb.com/texturepacker",
     version: "1.1",
-    image: "https://w-img.b-cdn.net/asllc/spritesheets/people-2-2.png",
+    image: "https://w-img.b-cdn.net/asllc/spritesheets/people-2-3.png",
     format: "RGBA8888",
     size: { w: 640, h: 1210 },
     scale: "1",
     smartupdate:
-      "$TexturePacker:SmartUpdate:6c5718e77a8baf95fa6ee51ce873b322:daaea6cdd21df6b6db34527f23d52326:0ec24d7315146a29ef5ee0763aefa8ac$",
+      "$TexturePacker:SmartUpdate:41373c704e5c1b4c35bb45998c071d65:2f10d602d86c886dc32096e809c44216:cc233cb3d02271db910cb3df1d0aaa85$",
   },
 };
