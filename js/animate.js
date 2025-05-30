@@ -8,7 +8,10 @@ export default async function animate() {
   Background.animateClouds();
   Background.animatePlane();
   Background.animateBlimp();
-  Background.animateSnow();
+
+  if (State.weather === "snow") {
+    Background.animateSnow();
+  }
 
   State.people.forEach((person) => person.animate());
 

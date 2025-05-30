@@ -90,6 +90,10 @@ export default class Background {
   }
 
   static renderSnow() {
+    if (State.weather !== "snow") {
+      return;
+    }
+
     const scale = State.scale();
     const snowflakeSize = 8 * scale;
     const numberOfSnowflakes = 200;
