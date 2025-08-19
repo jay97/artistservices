@@ -63,4 +63,5 @@ export const GREETINGS = {
   wes: ["Hello world"],
   darkie: ["What?", "Yuh", "Let's write a haiku"],
   hxstage: ["I put myself through the floor", "What's good?", "Rawr xd"],
+  nikko: ["outcast forever !", "It is what it is"],
 };
