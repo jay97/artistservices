@@ -14,6 +14,7 @@ import redBuilding from "./red-building.js";
 import plane from "./plane.js";
 import dirt from "./dirt.js";
 import blimp from "./blimp.js";
+import nikko from "./nikko.js";
 
 const SPRITESHEETS = [
   { key: "people", value: people },
@@ -22,6 +23,7 @@ const SPRITESHEETS = [
   { key: "red-building", value: redBuilding },
   { key: "floors-1", value: floors1 },
   { key: "floors-2", value: floors2 },
+  { key: "nikko", value: nikko },
 ];
 
 const SECONDARY_SPRITESHEETS = [

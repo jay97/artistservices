@@ -39,7 +39,8 @@ export default class Person {
     const sprites = (() => {
       return (
         State.spritesheets.people.animations[name] ||
-        State.spritesheets["people-2"].animations[name]
+        State.spritesheets["people-2"].animations[name] ||
+        State.spritesheets[name].animations[name]
       );
     })();
 

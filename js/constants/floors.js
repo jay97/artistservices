@@ -127,6 +127,17 @@ export const FLOORS = {
       soundcloud: "https://soundcloud.com/skotskr",
     },
   },
+  nikko: {
+    name: "Nikko",
+    animationFrames: 15,
+    links: {
+      apple: "https://music.apple.com/artist/cherry-ills/1572847963",
+      spotify: "https://open.spotify.com/artist/3dnOnDLzcymqwDP7HMEFAC",
+      ig: "https://www.instagram.com/nikkonrg/",
+      youtube: "https://www.youtube.com/@nikkonrg",
+      soundcloud: "https://soundcloud.com/nikko-nrg",
+    },
+  },
   cherry: {
     name: "Cherry Ills",
     links: {
