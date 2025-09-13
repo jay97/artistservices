@@ -49,13 +49,13 @@ export default {
       spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
       sourceSize: { w: 640, h: 275 },
     },
-    "sorbet-floor.png": {
-      frame: { x: 640, y: 550, w: 640, h: 275 },
-      rotated: false,
-      trimmed: false,
-      spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
-      sourceSize: { w: 640, h: 275 },
-    },
+    // "sorbet-floor.png": {
+    //   frame: { x: 640, y: 550, w: 640, h: 275 },
+    //   rotated: false,
+    //   trimmed: false,
+    //   spriteSourceSize: { x: 0, y: 0, w: 640, h: 275 },
+    //   sourceSize: { w: 640, h: 275 },
+    // },
     "steel-floor-1.png": {
       frame: { x: 1280, y: 550, w: 640, h: 275 },
       rotated: false,

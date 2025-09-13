@@ -52,7 +52,7 @@ export const GREETINGS = {
   mkultra: [],
   greg: [],
   jake: [],
-  sorbet: ["Good morning!", "One more thing...", "I love strawberries"],
+  // sorbet: ["Good morning!", "One more thing...", "I love strawberries"],
   steel: [
     "SteelSoldier Online",
     "Pixel Time!",

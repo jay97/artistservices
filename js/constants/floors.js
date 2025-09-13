@@ -290,22 +290,22 @@ export const FLOORS = {
     name: "Jake",
     basement: true,
   },
-  sorbet: {
-    name: "sorbet",
-    basement: true,
-    extras: [
-      {
-        name: "cat",
-        moves: false,
-        positionX: 950,
-      },
-      {
-        name: "computer",
-        moves: false,
-        positionX: 5,
-      },
-    ],
-  },
+  // sorbet: {
+  //   name: "sorbet",
+  //   basement: true,
+  //   extras: [
+  //     {
+  //       name: "cat",
+  //       moves: false,
+  //       positionX: 950,
+  //     },
+  //     {
+  //       name: "computer",
+  //       moves: false,
+  //       positionX: 5,
+  //     },
+  //   ],
+  // },
   wes: {
     name: "Wes",
     basement: true,
@@ -333,7 +333,7 @@ export const OTHER_IDS = [
   "greg",
   "jake",
   "plague-blvd",
-  "sorbet",
+  // "sorbet",
   "steel",
   "wud",
   "wes",
