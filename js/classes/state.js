@@ -13,7 +13,7 @@ export default class State {
   static activeFloorNumber = null;
   static people = [];
   static personWantsToGotoFloor = null;
-  static weather = "";
+  static weather = "snow";
   static scale = () => {
     if (isLargeSizedScreen()) {
       return 0.4;
