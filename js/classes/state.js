@@ -13,7 +13,12 @@ export default class State {
   static activeFloorNumber = null;
   static people = [];
   static personWantsToGotoFloor = null;
-  static weather = "snow";
+  static get weather() {
+    // Only snow during winter months
+    const month = new Date().getMonth();
+    const isWinter = month === 11 || month === 0 || month === 1;
+    return isWinter ? "snow" : null;
+  }
   static scale = () => {
     if (isLargeSizedScreen()) {
       return 0.4;
@@ -44,7 +49,7 @@ export default class State {
     currentAnimation: null,
     start: () => {
       const maxFloorsOnScreen = Math.floor(
-        this.app.screen.height / Building.lobby.height()
+        this.app.screen.height / Building.lobby.height(),
       );
 
       let cameraPosition =
